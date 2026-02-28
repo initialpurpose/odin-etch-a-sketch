@@ -1,19 +1,20 @@
 const container = document.querySelector('.canvas-container');
 
-// Create a column of square boxes
-for (let i = 0; i < 16; i++) {
-    const column = document.createElement('div');
-    container.appendChild(column);
+function createGrid(size) {
+    container.innerHTML = '';
+    container.style.setProperty('--grid-size', size);
 
-    // Add boxes to columns
-    for (let j = 0; j < 16; j++) {
+    const total = size * size;
+
+    for (let i = 0; i < total; i++) {
         const div = document.createElement('div');
         div.classList.add('grid');
-
-        // Add to column
-        column.appendChild(div);
+        container.appendChild(div);
     }
 }
+
+// Create default grid layout
+createGrid(16);
 
 // Hover effect
 container.addEventListener('mouseover', (event) => {
