@@ -1,4 +1,5 @@
 const container = document.querySelector('.canvas-container');
+const gridBtn = document.querySelector('.gridBtn');
 
 function createGrid(size) {
     container.innerHTML = '';
@@ -26,5 +27,17 @@ container.addEventListener('mouseover', (event) => {
     // Check that it hasn't already been added
     if (!box.classList.contains('active-box')) {
         box.classList.add('active-box');
+    }
+});
+
+// Grid size button
+gridBtn.addEventListener('click', (event) => {
+    const input = prompt('What size grid would you like? (default: 16)');
+    const size = Number.parseInt(input, 10);
+
+    if (size > 0 && size <= 100) {
+        createGrid(size);
+    } else {
+        alert('Size must be less than 100x100');
     }
 });
