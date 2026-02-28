@@ -24,10 +24,7 @@ container.addEventListener('mouseover', (event) => {
     // Check that it is actually the box and not gaps between
     if (!box.classList.contains('grid')) return;
 
-    // Check that it hasn't already been added
-    if (!box.classList.contains('active-box')) {
-        box.classList.add('active-box');
-    }
+    box.classList.add('active-box');
 });
 
 // Grid size button
