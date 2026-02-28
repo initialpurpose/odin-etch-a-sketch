@@ -13,6 +13,8 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 960px;
+  max-height: 960px;
 }
 
 .grid {
@@ -22,4 +24,8 @@ html {
   box-sizing: border-box;
   display: flex;
   flex-shrink: 0;
+}
+
+.active-box {
+  background-color: black;
 }
